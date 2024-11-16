@@ -1,0 +1,149 @@
+:root {
+  --clr-primary: hsl(47, 88%, 63%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(0, 0%, 42%);
+  --clr-neutral-950: hsl(0, 0%, 7%);
+
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 0.75rem;
+  --ff-base: "Figtree", sans-serif;
+
+  --fw-500: 500;
+  --fw-800: 800;
+
+  --spacer: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset */
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Utility classes */
+
+/* General styling */
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-400);
+  line-height: 1.2;
+  margin: 0;
+  background: var(--clr-primary);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.card {
+  background: var(--clr-neutral-100);
+  max-width: 24rem;
+  margin: 0 calc(var(--spacer) * 1.5);
+  padding: calc(var(--spacer) * 1.5);
+  border-radius: 1em;
+  border: 1px solid var(--clr-neutral-950);
+  box-shadow: 8px 10px 0 var(--clr-neutral-950);
+}
+
+@media (min-width: 30em) {
+  .card {
+    margin: 0 auto;
+  }
+
+  .card > p:last-of-type {
+    font-size: var(--fs-400);
+  }
+
+  .card-title {
+    font-size: var(--fs-600);
+  }
+}
+
+/* Card */
+
+.card > .card-img {
+  background-image: url(/assets/images/illustration-article.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  min-height: 200px;
+  border-radius: 0.5em;
+}
+
+.card .tag {
+  font-size: var(--fs-200);
+  display: inline-block;
+  background: var(--clr-primary);
+  font-weight: var(--fw-800);
+  padding: 0.4em 1em;
+  border-radius: 0.2em;
+  margin-block: 2em 1.5em;
+}
+
+.card .card-date {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-500);
+}
+
+.card-title {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-800);
+  transition: color 0.1s ease-in;
+  cursor: pointer;
+}
+
+.card-title:hover {
+  color: var(--clr-primary);
+}
+
+.card > p:last-of-type {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-500);
+  color: var(--clr-neutral-500);
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 30em) {
+  .card .card-date,
+  .card .tag {
+    font-size: var(--fs-300);
+  }
+
+  .card > p:last-of-type {
+    font-size: var(--fs-400);
+  }
+
+  .card-title {
+    font-size: var(--fs-600);
+  }
+}
+
+.card-profile {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-weight: var(--fw-800);
+  font-size: var(--fs-300);
+}
+
+.card-profile img {
+  width: 2.5em;
+  height: 2.5em;
+}
